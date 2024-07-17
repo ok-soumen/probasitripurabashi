@@ -18,15 +18,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Setup PHP ${{ matrix.php-version }}
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: ${{ matrix.php-version }}
-          extensions: mbstring, intl, dom, pdo, pdo_mysql, zip, bcmath, openssl
-          ini-values: post_max_size=256M, upload_max_filesize=256M, memory_limit=2G
-          coverage: none
-
+        
       - name: Setup Composer
         run: sudo apt-get update && sudo apt-get install -y composer
 
