@@ -31,9 +31,9 @@ jobs:
         run: npm install
 
       - name: Build Frontend Assets
-        run: npm run build
+        run: npm run dev
 
       - name: Set Permissions for Storage
         run: |
-          sudo chown -R $(whoami):$(whoami) /var/www/probasi/_work/probasitripurabashi/probasitripurabashi/storage
-          sudo chmod -R 775 /var/www/probasi/_work/probasitripurabashi/probasitripurabashi/storage
+          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S chown -R www-data:www-data /var/www/probasi/_work/probasitripurabashi/probasitripurabashi/storage
+          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S chmod -R 775 /var/www/probasi/_work/probasitripurabashi/probasitripurabashi/storage
