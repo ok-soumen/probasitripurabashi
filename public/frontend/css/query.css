@@ -1,0 +1,445 @@
+/* -----------------------------leptop--------------------- */
+
+@media (max-width: 1700px) {
+
+
+    .main-grid .main-grid-left .main-grid-left-con .main-grid-left-con-text {
+        padding-left: 10%;
+        padding-top: 64px;
+    }
+
+    .main-grid .main-grid-right .main-grid-right-con {
+        margin-right: 18%;
+    }
+
+
+}
+
+
+
+/* -----------------------------Small leptop--------------------- */
+
+@media (max-width: 1500px) {}
+
+
+/* -----------------------------Tabs--------------------- */
+
+@media (max-width: 1200px) {}
+
+/* -----------------------------Mobile--------------------- */
+
+@media (max-width: 800px) {
+
+    .header {
+        grid-template-columns: 1fr 6fr 2fr;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .header .head-center {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .short-line {
+        display: none;
+    }
+
+    .banner-right .minister-sec {
+        gap: 8px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+        width: 100px;
+    }
+
+    .header button {
+        text-align: left;
+    }
+
+    .header button.search {
+        border: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+    }
+
+    .header .head-left {
+        display: flex;
+        flex-direction: column-reverse;
+        row-gap: 8px;
+
+    }
+
+    .sidepanel .side-menu {
+        width: 100%;
+        padding: 0 4vw;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .banner-sec {
+        height: auto;
+    }
+
+    .banner-sec .banner-grid {
+        flex-direction: column;
+        row-gap: 8px;
+        padding-top: 130px;
+    }
+
+    .dummy-box {
+        width: 80px;
+        height: 141px;
+        left: 200px;
+        bottom: 30px;
+    }
+
+    .slider-layer .slider-con p {
+        width: 100%;
+    }
+
+    .banner-sec .banner-grid .banner-left {
+        overflow: hidden;
+        height: 72vh;
+        width: 100vw;
+        border-bottom-left-radius: 0;
+    }
+
+    .slider-layer .slider-con {
+        padding: 0 6vw;
+    }
+
+    .slider-layer .slider-con h5 {
+        width: 80%;
+        font-size: 14px;
+    }
+
+    .slider-layer .slider-con h6 {
+        width: 80%;
+    }
+
+    .slider-layer .slider-con h4 {
+        width: 100%;
+    }
+
+    .banner-left #slider #next {
+        right: 4vw;
+    }
+
+    .banner-left #slider #prev {
+        right: 20vw;
+    }
+
+    .banner-left #slider #prev,
+    .banner-left #slider #next {
+        bottom: 32px;
+    }
+
+    .banner-left #slider ul li img {
+        width: 100vw;
+    }
+
+    .banner-sec .scroll-sec {
+        display: none;
+    }
+    .slider-layer .slider-con button{
+        margin-bottom: 20%;
+    }
+
+    .banner-sec .banner-grid .banner-right {
+        width: 90vw;
+        min-height: 65vh;
+        padding: 0 3vw 87px 7vw;
+        position: relative;
+    }
+
+    .banner-right .bg-pattern {
+
+        bottom: 35%;
+    }
+
+    .mobile-slide-down {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 16px;
+    }
+
+    .banner-right .bg-pattern img {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .minister .minister-photo {
+        width: 35vw;
+        height: 28vh;
+    }
+
+    .minister .minister-des {
+        margin-top: 24px;
+    }
+
+    .cm .minister-photo {
+        width: 35vw;
+        height: 28vh;
+    }
+
+    .banner-grid .banner-right p {}
+
+    .banner-grid .banner-right h2 {
+        font-size: 72px;
+        letter-spacing: 2px;
+        margin-top: -10px;
+        margin-bottom: 16px;
+        margin-left: -5px;
+    }
+
+
+    .hero-grid-sec {
+
+        padding-bottom: 48px;
+        position: relative;
+    }
+
+    .hero-grid {
+        overflow: auto;
+        margin-top: 48px;
+    }
+
+    .mobile-scroll-right {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        width: 100%;
+        right: 0;
+        bottom: 0;
+        opacity: 0.5;
+    }
+    .banner-right .rotate-text{
+        top: 14%;
+    }
+    .mobile-scroll-right img {
+        width: 54px;
+        object-fit: contain;
+        padding-right: 4vw;
+    }
+
+    .hero-grid .hero-box {
+        height: 50vh;
+        width: 70vw;
+    }
+
+    .hero-box .hero-container .hero-container-text {
+        padding: 16px 4vw 0 4vw;
+    }
+
+    .hero-container-text h4 {
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .hero-container-text p {
+        width: 100%;
+        font-size: 11px;
+        line-height: 14px;
+    }
+
+    .hero-sec {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 8px 0 0px;
+        gap: 48px;
+    }
+
+    .hero-main .hero-main-left {
+        padding-right: 0;
+    }
+
+    .hero-main .hero-main-left img {
+        height: 272px;
+        margin-top: 20px;
+    }
+
+    .gallery-grid {
+        overflow: auto;
+        margin-bottom: 0;
+    }
+
+    .gallery-title {
+        padding-top: 48px;
+    }
+
+    .gallery-item {
+        width: 70vw;
+    }
+
+    .gallery-item img {
+        height: 148px;
+        margin-bottom: 8px;
+    }
+
+    .subscribe-sec .subscribe {
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .subscribe-sec .subscribe h6 {
+        display: none;
+    }
+
+    .subscribe-sec .subscribe p {
+        display: none;
+    }
+
+    .subscribe-sec .subscribe button {
+        margin: 0;
+    }
+
+    .footer-slider-sec {
+        margin: 48px 0 24px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        padding: 64px 0 72px;
+        gap: 48px;
+    }
+
+    .footer-main .right {
+        border-left: none;
+        padding: 0;
+        grid-row: 2;
+    }
+    .footer-main .center{
+        height: auto;
+        border: none;
+        padding: 0;
+        grid-row: 1;
+    }
+
+    .footer-main .left {
+        padding-right: 0;
+    }
+
+    .footer-main .left p {
+        width: 100%;
+    }
+
+    .footer-main .right .foot-manu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+    }
+
+
+    .register-sec {
+        padding: 84px 0 48px;
+    }
+
+    .register-sec .register-box {
+        width: 100%;
+        box-shadow: none;
+        padding: 32px 4vw 48px;
+    }
+
+    .register-box .register-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .minister .minister-des h6 {
+        font-size: 9px;
+    }
+    .minister .minister-des p {
+        font-size: 9px;
+    }
+
+    .other-page-sec .page-title h2 {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .other-page-sec .page-title p {
+        width: 100%;
+    }
+
+    .other-page-sec .gallery-grid {
+        grid-template-columns: 1fr;
+        overflow: hidden;
+    }
+
+    .other-page-sec .gallery-grid .gallery-item {
+        width: 100%;
+    }
+
+    .other-page-sec .gallery-item img {
+        height: 30vh;
+    }
+
+    .event-slider {
+        width: 92vw;
+        height: 40vh;
+    }
+
+    .event-slider #slider ul li img {
+        width: 92vw;
+    }
+    .about-body{
+        padding: 0 6vw;
+      }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid .left {
+        grid-row: 2;
+    }
+
+
+    .my-table h2 span {
+        font-size: 22px;
+        line-height: 27px;
+        padding: 0 24px;
+    }
+
+    .my-table hr {
+        margin-top: -15px;
+    }
+
+    .table-page-sec .my-table {
+        padding-top: 48px;
+    }
+
+    .my-table table tbody tr {
+        flex-direction: column;
+    }
+
+    .my-table table tbody tr td h6 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .my-table table tbody tr td p {
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .my-table table tbody tr td {
+        width: 100%;
+    }
+
+    .my-table table tbody tr .view-btn-td {
+        width: 100%;
+        text-align: center;
+    }
+
+    .my-table table tbody tr .view-btn-td button {
+        width: 100%;
+        margin-top: 16px;
+    }
+}
