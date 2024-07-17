@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Homecontroller;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admincontroller;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Banner\Bannercontroller;
 use App\Http\Controllers\Cmcorner\Cmcontroller;
@@ -152,7 +152,7 @@ Route::middleware(['auth'])->group(
             function () {
                 Route::get('/view/cmcorner', 'Cmcorner')->name('Cmcorner');
                 Route::post('/add/cmcorner', 'Addcmcorner')->name('Add.cmcorner');
-               
+
                 Route::get('/delete/cmcorner/{id}', 'Deletecmcorner')->name('delete.cmcorner');
             }
         );
