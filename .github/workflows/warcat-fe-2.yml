@@ -31,7 +31,7 @@ jobs:
         run: npm install
 
       - name: Build Frontend Assets
-        run: npm run dev
+        run: npm run build
 
       - name: Set Permissions for Storage
         run: |
