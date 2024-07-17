@@ -37,3 +37,9 @@ jobs:
         run: |
           echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S chown -R www-data:www-data /var/www/probasi/_work/probasitripurabashi/probasitripurabashi/storage
           echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S chmod -R 775 /var/www/probasi/_work/probasitripurabashi/probasitripurabashi/storage
+
+      - name: Set Permissions for Upload Directory
+        run: |
+          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S chmod g+w /var/www/probasi/_work/probasitripurabashi/probasitripurabashi/public/upload/*
+
+      # Add additional steps as needed for testing, deployment, etc.
