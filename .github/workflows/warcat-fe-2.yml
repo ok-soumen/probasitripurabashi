@@ -21,3 +21,14 @@ jobs:
 
       - name: Install PHP Dependencies
         run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install Node.js Dependencies
+        run: npm install
+
+      - name: Build Frontend Assets
+        run: npm run dev
