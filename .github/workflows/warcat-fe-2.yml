@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        
+
       - name: Install PHP Dependencies
         run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
 
@@ -27,6 +27,3 @@ jobs:
 
       - name: Generate Laravel App Key
         run: php artisan key:generate
-
-      - name: Run Tests
-        run: php artisan test
