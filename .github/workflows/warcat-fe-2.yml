@@ -22,8 +22,5 @@ jobs:
       - name: Install PHP Dependencies
         run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
 
-      - name: Copy .env.example to .env
-        run: cp .env.example .env
-
       - name: Generate Laravel App Key
         run: php artisan key:generate
