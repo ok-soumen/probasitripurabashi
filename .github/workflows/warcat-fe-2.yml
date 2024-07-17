@@ -32,3 +32,8 @@ jobs:
 
       - name: Build Frontend Assets
         run: npm run build
+
+      - name: Set Permissions for Storage
+        run: |
+          sudo chown -R www-data:www-data /var/www/probasi/_work/probasitripurabashi/probasitripurabashi/storage
+          sudo chmod -R 775 /var/www/probasi/_work/probasitripurabashi/probasitripurabashi/storage
