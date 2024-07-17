@@ -1,0 +1,43 @@
+name: Laravel CI
+
+on:
+  push:
+    branches: [ "Dev" ]
+  pull_request:
+    branches: [ "Dev" ]
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        php-version: [8.2]  # Use PHP 8.2
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP ${{ matrix.php-version }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: mbstring, intl, dom, pdo, pdo_mysql, zip, bcmath, openssl
+          ini-values: post_max_size=256M, upload_max_filesize=256M, memory_limit=2G
+          coverage: none
+
+      - name: Setup Composer
+        run: sudo apt-get update && sudo apt-get install -y composer
+
+      - name: Install PHP Dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+
+      - name: Copy .env.example to .env
+        run: cp .env.example .env
+
+      - name: Generate Laravel App Key
+        run: php artisan key:generate
+
+      - name: Run Tests
+        run: php artisan test
