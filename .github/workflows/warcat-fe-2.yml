@@ -16,8 +16,11 @@ jobs:
         php-version: [8.2]  # Use PHP 8.2
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Pull latest changes from the repository
+        run: |
+          git fetch origin Dev
+          git reset --hard origin/Dev
+          git pull origin Dev
 
       - name: Install PHP Dependencies
         run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
@@ -41,5 +44,3 @@ jobs:
       - name: Set Permissions for Upload Directory
         run: |
           echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S chmod g+w /var/www/probasi/_work/probasitripurabashi/probasitripurabashi/public/upload/*
-
-      # Add additional steps as needed for testing, deployment, etc.
