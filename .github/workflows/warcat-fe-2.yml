@@ -13,14 +13,24 @@ jobs:
 
     strategy:
       matrix:
-        php-version: [8.2]  # Use PHP 8.2
+        php-version: [8.2]
 
     steps:
-      - name: Pull latest changes from the repository
+      - name: Change to project directory
+        working-directory: /var/www/probasi/_work/probasitripurabashi/probasitripurabashi
         run: |
-          git fetch origin Dev
-          git reset --hard origin/Dev
-          git pull origin Dev
+          if [ ! -d ".git" ]; then
+            echo "Initializing a new Git repository"
+            git init
+            git remote add origin <repository-url>
+            git fetch origin Dev
+            git reset --hard origin/Dev
+          else
+            echo "Pulling latest changes"
+            git fetch origin Dev
+            git reset --hard origin/Dev
+            git pull origin Dev
+          fi
 
       - name: Install PHP Dependencies
         run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
