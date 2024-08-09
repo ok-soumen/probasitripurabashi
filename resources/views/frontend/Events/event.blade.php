@@ -7,7 +7,7 @@
         <div class="page-title">
             <h2>Our Events</h2>
             <div class="breadcrumb">
-                <a href="index.html"><span>Home</span></a>
+                <a href="{{ url('/') }}"><span>Home</span></a>
                 <span>/</span>
                 <span class="active">Our Events</span>
             </div>
@@ -19,17 +19,17 @@
         <div class="gallery-grid">
 
             @foreach ( $data as $item)
-            <a href="{{ "/view-event/". $item->id}}">
+           <a href="{{ " /view-event/". Crypt::encrypt($item['id'])}}">
                 <div class="gallery-item">
                          <img src="{{ asset('upload/eventthumbnail/'. $item ->image ) }}" alt="">
 
                     <h4>{{ $item->name }}</h4>
                     <p>{{ $item->date }}</p>
-                 <p>{{$item->description}}</p> 
+                 <p>{{$item->description}}</p>
                 </div>
             </a>
             @endforeach
-            
+
 
 
 

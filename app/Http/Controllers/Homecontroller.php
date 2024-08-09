@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Mail;
-use App\Mail\SendMail;
 use App\Models\Event;
+use App\Mail\SendMail;
 use App\Models\Gallery;
 use App\Models\Visitor;
 use App\Models\Services;
@@ -13,6 +13,8 @@ use App\Models\Thumbnail;
 use App\Models\Eventgallery;
 use App\Models\Registration;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 class Homecontroller extends Controller
 {
@@ -63,14 +65,13 @@ class Homecontroller extends Controller
         $data->things_refer_outside = $request->things_refer_outside;
         $data->save();
 
-        $RegisteredName = ['name' => $request->name];
-        // $RegisteredId = $RandomId;
-        $subject = 'Your Dynamic Subject';
+       $RegisteredName = ['name' => $request->name];
+        $subject = 'Registration mail';
+        $registeredId = $RandomId;
 
-        Mail::to($request->email)->send(new SendMail($RegisteredName, $subject));
-        
-        
-      
+        Mail::to($request->email)->send(new SendMail($RegisteredName, $subject,$registeredId));
+
+
         return redirect()->route('thankyou');
     }
     public function Thankyou()
@@ -115,12 +116,17 @@ class Homecontroller extends Controller
     public function Gallery($id)
 
     {
-        $thumbnail = Thumbnail::find($id);
-        $data = Gallery::where('thumbnail_id', $id)->get();
-        //$main = $data->gallery;
-        //dd($main);
+       try {
+       $decryptedId = Crypt::decrypt($id);
+         } catch (DecryptException $e) {
+       abort(404);
+         }
+        $thumbnail = Thumbnail::find($decryptedId);
+        $data = Gallery::where('thumbnail_id', $decryptedId)->get();
+
 
         return view('frontend.Gallery.gallery', compact('data', 'thumbnail'));
+
     }
     //==================public Events===============
     public function Events()
@@ -128,19 +134,22 @@ class Homecontroller extends Controller
         $data = Event::all();
         return view('frontend.Events.event', compact('data'));
     }
-    public function ViewEvent($id)
+     public function ViewEvent($id)
 
     {
-        $main = Event::find($id);
-        $data = Eventgallery::where('event_id', $id)->get();
+         try {
+         $decryptedId = Crypt::decrypt($id);
+         } catch (DecryptException $e) {
+        abort(404);
+         }
+        $main = Event::find($decryptedId);
+        $data = Eventgallery::where('event_id', $decryptedId)->get();
 
         return view('frontend.Events.event_content', compact('data', 'main'));
     }
     //=======================visitor==============
     public function Visitors(Request $request)
     {
-
-
 
         $visitor = Visitor::where('ip', $request->ip())->first();
 

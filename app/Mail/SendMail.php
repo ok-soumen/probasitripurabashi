@@ -21,10 +21,11 @@ class SendMail extends Mailable
      *
      * @return void
      */
-    public function __construct($data,$registeredId)
+   public function __construct($data,$subject,$registeredId)
     {
         $this->data = $data;
-        $this->registeredId = $registeredId;
+        $this->subject=$subject;
+        $this->registeredId=$registeredId;
     }
 
     /**
@@ -39,5 +40,6 @@ class SendMail extends Mailable
             ->view('mail.mail')
             ->with('data', $this->data)
             ->with('registeredId', $this->registeredId);
+
     }
 }
