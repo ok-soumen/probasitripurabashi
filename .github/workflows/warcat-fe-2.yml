@@ -19,6 +19,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: List Directory Contents Before Deletion
+        run: ls -la /var/www/probasi/_work/probasitripurabashi/probasitripurabashi/
+
+      - name: Delete Storage Directory
+        run: |
+          echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S rm -rf /var/www/probasi/_work/probasitripurabashi/probasitripurabashi/storage
+
       - name: Install PHP Dependencies
         run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
 
@@ -41,5 +48,3 @@ jobs:
       - name: Set Permissions for Upload Directory
         run: |
           echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S chmod g+w /var/www/probasi/_work/probasitripurabashi/probasitripurabashi/public/upload/*
-
-      # Add additional steps as needed for testing, deployment, etc.

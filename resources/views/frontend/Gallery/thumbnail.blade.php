@@ -20,7 +20,7 @@
             </div>
             <div class="gallery-grid">
                 @foreach ( $data as $item )
-                   <a href="{{ "/gallery/".$item['id'] }}">
+                   <a href="{{ " /gallery/".Crypt::encrypt($item['id']) }}">
                     <div class="gallery-item">
                         <img src="{{ asset('upload/thumbnail/'.$item->thumbnail_image) }}" alt="">
                         <h4>{{ $item->title }}</h4>
